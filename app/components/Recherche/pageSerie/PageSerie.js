@@ -84,26 +84,28 @@ class Serie extends Component {
       <View>
         <StatusBar />
         <SafeAreaView>
-          <TextInput
-            style={styles.input}
-            placeholder="Recherche par série ..."
-          />
-          <View style={styles.button}>
-            <Button
-              color="mediumseagreen"
-              title="Rechercher"
-              onPress={this.getSerie}
+          <View>
+            <TextInput
+              style={styles.input}
+              placeholder="Recherche par série ..."
             />
-          </View>
-          <ScrollView
-            refreshControl={
-              <RefreshControl
-                refreshing={this.state.refreshing}
-                onRefresh={this.getFilm}
+            <View style={styles.button}>
+              <Button
+                color="mediumseagreen"
+                title="Rechercher"
+                onPress={this.getSerie}
               />
-            }>
-            {this.showSerie()}
-          </ScrollView>
+            </View>
+            <ScrollView
+              refreshControl={
+                <RefreshControl
+                  refreshing={this.state.refreshing}
+                  onRefresh={this.getFilm}
+                />
+              }>
+              {this.showSerie()}
+            </ScrollView>
+          </View>
         </SafeAreaView>
       </View>
     );

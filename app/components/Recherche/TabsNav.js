@@ -4,8 +4,8 @@ import {createMaterialBottomTabNavigator} from '@react-navigation/material-botto
 import Icon from 'react-native-vector-icons/Ionicons';
 /** Selection de notre librairie d'icon avec ajout d'une ligne de code dans android/app/build.gradle : 
   - - - - - apply from: "../../node_modules/react-native-vector-icons/fonts.gradle" - - - - - */
-import Film from './app/components/Recherche/pageFilm/PageFilm';
-import Serie from './app/components/Recherche/pageSerie/PageSerie';
+import Film from './pageFilm/PageFilm';
+import Serie from './pageSerie/PageSerie';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -21,9 +21,9 @@ class TabNav extends Component {
           component={Film}
           options={{
             tabBarLabel: 'Liste Film',
-            /*tabBarIcon: ({color, size}) => (
-              <Icon name="cloud-circle" color={color} size={size} />
-            ),*/
+            tabBarIcon: ({color, size}) => (
+              <Icon name="film" color={color} size={size} />
+            ),
           }}
         />
 
@@ -32,9 +32,9 @@ class TabNav extends Component {
           component={Serie}
           options={{
             tabBarLabel: 'Liste Série',
-            /*tabBarIcon: ({color, size}) => (
-              <Icon name="calendar" color={color} size={size} />
-            ),*/
+            tabBarIcon: ({color, size}) => (
+              <Icon name="tv" color={color} size={size} />
+            ),
           }}
         />
       </Tab.Navigator>

@@ -4,7 +4,7 @@ import {StyleSheet} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import Icon from 'react-native-vector-icons/Ionicons';
-import TabNav from './TabsNav';
+import TabNav from './app/components/Recherche/TabsNav';
 import Profil from './app/components/Profil/PageProfil';
 
 const Drawer = createDrawerNavigator();
@@ -21,7 +21,7 @@ class App extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({splashscreen: false});
-    }, 3000);
+    }, 2000);
   }
 
   render() {
@@ -35,7 +35,12 @@ class App extends Component {
             alignItems: 'center',
           }}>
           <View>
-            <Icon style={styles.icon} name="film" color={color} size={200} />
+            <Icon
+              style={styles.icon}
+              name="play-skip-forward-circle"
+              color={color}
+              size={200}
+            />
           </View>
 
           <View>
@@ -59,8 +64,30 @@ class App extends Component {
             drawerStyle={{
               width: 200,
             }}>
-            <Drawer.Screen name="Profil" component={Profil} />
-            <Drawer.Screen name="Films / Séries" component={TabNav} />
+            <Drawer.Screen
+              name="Profil"
+              component={Profil}
+              options={{
+                drawerLabel: 'Profil',
+                drawerIcon: ({color, size}) => (
+                  <Icon name="person" color={color} size={size} />
+                ),
+              }}
+            />
+            <Drawer.Screen
+              name="Films / Séries"
+              component={TabNav}
+              options={{
+                drawerLabel: 'Films / Séries',
+                drawerIcon: ({color, size}) => (
+                  <Icon
+                    name="play-skip-forward-circle"
+                    color={color}
+                    size={size}
+                  />
+                ),
+              }}
+            />
           </Drawer.Navigator>
         </NavigationContainer>
       );

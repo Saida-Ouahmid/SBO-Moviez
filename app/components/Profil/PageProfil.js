@@ -17,24 +17,24 @@ class Profil extends Component {
 
           <TextInput
             style={styles.input}
-            placeholder="Nom d'Utilisateur"
-            placeholderTextColor="lightblack"
+            placeholder="Nom d'utilisateur"
+            placeholderTextColor="#778899"
           />
 
           <TextInput
             style={styles.input}
             placeholder="Adresse e-mail"
-            placeholderTextColor="lightblack"
+            placeholderTextColor="#778899"
           />
           <TextInput
             style={styles.input}
             placeholder="Numéro de téléphone"
-            placeholderTextColor="lightblack"
+            placeholderTextColor="#778899"
           />
           <TextInput
             style={styles.input}
             placeholder="Mot de Passe"
-            placeholderTextColor="lightblack"
+            placeholderTextColor="#778899"
           />
           <View style={styles.buttonValider}>
             <Button
